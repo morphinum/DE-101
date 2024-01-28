@@ -9,14 +9,20 @@
    createuser -P user_name — создание юзера без входа в PSQL. -P создает пароль
    DROP USER user_name; — удаление юзера в PSQL.
 5) ALTER DATABASE db_name OWNER TO new_owner; — передает права ВЛАДЕЛЬЦА новому юзеру. 
-6) CREATE TABLE table_name (
+
+
+
+1) CREATE TABLE table_name (
                               column_1 data_type PRIMARY KEY, – устанавливает столбец как КЛЮЧЕВОЙ
                               column_2 data_type UNIQUE, – устанавливает уникальные значения для каждой строки в столбце
                               column_3 data_type NOT NULL, – не дает NULL значениям входить в столбец
                               column_4 data_type DEFAULT – присваивает ЗНАЧЕНИЕ ПО УМОЛЧАНИЮ для столбца, если значение не указано
                            ); - создание таблицы в PSQL
-7) INSERT INTO table_name (column1, column2)
+2) INSERT INTO table_name (column1, column2)
    VALUES (value1, value2);  - добавление данных в таблицу
+3) ALTER TABLE table_name
+   ADD column_name data_type – добавление в таблицу нового столбца 
+4) 
 
 
 
