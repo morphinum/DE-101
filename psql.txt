@@ -5,8 +5,13 @@
    createdb db_name -O user_name — создание базы данных без входа в PSQL. -O (owner) назначает юзера (user_name) владельцем    
    данной бд.
    DROP DATABASE db_name; — удаление бд в PSQL.
-5) 
+5) CREATE USER user_name WITH PASSWORD 'password'; — создание юзера в PSQL.
+   createuser -P user_name — создание юзера без входа в PSQL. -P создает пароль
    DROP USER user_name; — удаление юзера в PSQL.
    
+
+
+
+
 \l — показывает все БАЗЫ ДАННЫХ (Name, Owner, Encoding, Collate, Ctype, Access privileges)
 \l+ — показывает все БАЗЫ ДАННЫХ (Name, Owner, Encoding, Collate, Ctype, Access privileges + Size, Tablespace, Description)
