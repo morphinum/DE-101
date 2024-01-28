@@ -1,1 +1,7 @@
-1) sudo -i -u postgres — 
+1) sudo -i -u postgres — вход в postgresql
+2) psql -U user_name -h host -d db_name — вход в базу данных (db_base) через хост (host) под юзером (user_name)
+3) CREATE DATABASE db_name WITH OWNER user_name ENCODING='UTF-8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8'; — создание  
+   базы данный УЖЕ непосредственно в PSQL.
+   createdb db_name -O user_name — создание базы данных без входа в PSQL. -O (owner) назначает юзера (user_name) владельцем    
+   данной бд.
+4)
