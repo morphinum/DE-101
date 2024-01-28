@@ -9,6 +9,11 @@
    createuser -P user_name — создание юзера без входа в PSQL. -P создает пароль
    DROP USER user_name; — удаление юзера в PSQL.
 5) ALTER DATABASE db_name OWNER TO new_owner; — передает права ВЛАДЕЛЬЦА новому юзеру. 
+6) CREATE TABLE table_name (
+                              column_1 data_type, 
+                              column_2 data_type, 
+                              column_3 data_type
+                           );
 
 
 
@@ -18,5 +23,10 @@
 \du — показывает всех пользователей (Role name, List of Roles' attributes, Member of)
 
 
-
-INSERT INTO 
+ВСЕ ТИПЫ ДАННЫХ - https://postgrespro.ru/docs/postgresql/15/datatype
+1) INTEGER: A whole number between -2147483648 and 2147483647. Postgres also includes alternatives smallint and bigint.
+2) REAL: A floating-point type that has variable-precision with a maximum range of 6 decimals.
+text: A range of characters of unlimited length.
+char: A range of characters of fixed length n, an error will be raised for any entries that exceed length n. Entries that are shorter than n will be space-padded.
+varchar: A range of characters of variable length with a maximum length n. However, unlike char there is no space-padding to extend entries shorter than n.
+date: A date (without any time value), such as 2022-06-21 (ISO 8601 format) and 6/21/2022.
