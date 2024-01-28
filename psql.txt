@@ -21,8 +21,12 @@
 2) INSERT INTO table_name (column1, column2)
    VALUES (value1, value2);  - добавление данных в таблицу
 3) ALTER TABLE table_name
-   ADD column_name data_type – добавление в таблицу нового столбца 
-4) 
+   ADD COLUMN column_name data_type – добавление в таблицу нового столбца 
+4) UPDATE table_name
+   SET column1 = value1, column2 = value2
+   WHERE some_column = some_value; – обновление строчных данных в колонках (column1 и column2)
+5) DELETE FROM table_name
+   WHERE some_column = some_value; – удаление целой строкию. Если предложение WHERE опущено, все записи будут удалены.
 
 
 
