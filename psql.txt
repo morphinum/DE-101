@@ -1,3 +1,6 @@
+==================================================================================================================================
+ТЕРМИНАЛ
+==================================================================================================================================
 1) sudo -i -u postgres — вход в postgresql
 2) psql -U user_name -h host -d db_name — вход в базу данных (db_base) через хост (host) под юзером (user_name)
 3) CREATE DATABASE db_name WITH OWNER user_name ENCODING='UTF-8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8'; — создание  
@@ -10,32 +13,49 @@
    DROP USER user_name; — удаление юзера в PSQL.
 5) ALTER DATABASE db_name OWNER TO new_owner; — передает права ВЛАДЕЛЬЦА новому юзеру. 
 
-
-
-1) CREATE TABLE table_name (
-                              column_1 data_type PRIMARY KEY, – устанавливает столбец как КЛЮЧЕВОЙ
-                              column_2 data_type UNIQUE, – устанавливает уникальные значения для каждой строки в столбце
-                              column_3 data_type NOT NULL, – не дает NULL значениям входить в столбец
-                              column_4 data_type DEFAULT – присваивает ЗНАЧЕНИЕ ПО УМОЛЧАНИЮ для столбца, если значение не указано
-                           ); - создание таблицы в PSQL
-2) INSERT INTO table_name (column1, column2)
-   VALUES (value1, value2);  - добавление данных в таблицу
-3) ALTER TABLE table_name
-   ADD COLUMN column_name data_type – добавление в таблицу нового столбца 
-4) UPDATE table_name
-   SET column1 = value1, column2 = value2
-   WHERE some_column = some_value; – редактирование строчных данных в колонках (column1 и column2)
-5) DELETE FROM table_name
-   WHERE some_column = some_value; – удаление целой строкию. Если предложение WHERE опущено, все записи будут удалены.
-
-
-
 \l — показывает все БАЗЫ ДАННЫХ (Name, Owner, Encoding, Collate, Ctype, Access privileges)
 \l+ — показывает все БАЗЫ ДАННЫХ (Name, Owner, Encoding, Collate, Ctype, Access privileges + Size, Tablespace, Description)
 \du — показывает всех пользователей (Role name, List of Roles' attributes, Member of)
 
+==================================================================================================================================
+КОМАНДЫ
+==================================================================================================================================
+1)    CREATE TABLE table_name (
+                                 column_1 data_type PRIMARY KEY, – устанавливает столбец как КЛЮЧЕВОЙ
+                                 column_2 data_type UNIQUE, – устанавливает уникальные значения для каждой строки в столбце
+                                 column_3 data_type NOT NULL, – не дает NULL значениям входить в столбец
+                                 column_4 data_type DEFAULT – присваивает ЗНАЧЕНИЕ ПО УМОЛЧАНИЮ для столбца, если значение не указано
+                              );  - создание таблицы в PSQL
+2)    INSERT INTO table_name (column1, column2)
+      VALUES (value1, value2);  - добавление данных в таблицу
+3)    ALTER TABLE table_name
+      ADD COLUMN column_name data_type – добавление в таблицу нового столбца 
+4)    UPDATE table_name
+      SET column1 = value1, column2 = value2
+      WHERE some_column = some_value; – редактирование строчных данных в колонках (column1 и column2)
+5)    DELETE FROM table_name
+      WHERE some_column = some_value; – удаление целой строкию. Если предложение WHERE опущено, все записи будут удалены.
+6)    CREATE VIEW view_name AS
+      SELECT column_names
+      FROM table_name; — создание представения (недотаблица).
+7)    COUNT(field_name) — подсчитывание значения в столбце (исключая NULL значения)
+      COUNT(*) — подсчитывание записей в таблице (кол-во строк, включая NULL значения)
+      AVG(table_name), SUM(table_name) — только числовые значения 
+      MIN(table_name), MAX(table_name) — все значения
+      ROUND(number_to_round, decimal_places) — округление числа до decimal_places после запятой. Если decimal_places отрицательное, то цифры перед запятой превращаются
+      в нули. Пример: ROUND(AVG(41072235), -5) = 41100000 
+8)   
+      
+==================================================================================================================================
+ОСТАЛЬНОЕ
+==================================================================================================================================
+\l — показывает все БАЗЫ ДАННЫХ (Name, Owner, Encoding, Collate, Ctype, Access privileges)
+\l+ — показывает все БАЗЫ ДАННЫХ (Name, Owner, Encoding, Collate, Ctype, Access privileges + Size, Tablespace, Description)
+\du — показывает всех пользователей (Role name, List of Roles' attributes, Member of)
 
-
+==================================================================================================================================
+ТИПЫ ДАННЫХ
+==================================================================================================================================
 ВСЕ ТИПЫ ДАННЫХ - https://postgrespro.ru/docs/postgresql/15/datatype
 1) INTEGER: A whole number between -2147483648 and 2147483647. Postgres also includes alternatives smallint and bigint.
 2) REAL: A floating-point type that has variable-precision with a maximum range of 6 decimals.
