@@ -23,6 +23,17 @@
 ==================================================================================================================================
 УСТАНОВКА С DOCKER
 ==================================================================================================================================
+https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
+- docker --version
+- docker compose version
+- curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.8.1/docker-compose.yaml'
+- кастомизации yaml файла 
+  https://www.youtube.com/watch?v=J6azvFhndLg&list=PLwFJcsJ61oujAqYpMp1kdUBcPG0sE0QMT&index=4
+- mkdir -p ./dags ./logs ./plugins ./config
+- echo -e "AIRFLOW_UID=$(id -u)" > .env
+- docker compose up airflow-init
+- docker compose up
+
 
 Ошибка;
 https://stackoverflow.com/questions/48957195/how-to-fix-docker-got-permission-denied-issue
