@@ -1,5 +1,5 @@
 1) установка kvm (включить поддердку квм в настройках VirtualBox)
 2) установка docker
-3) установка docker desctop
-4) установка docker compose
+3) установка docker desctop 
+4) установка docker compose sudo apt-get install docker-compose
 
