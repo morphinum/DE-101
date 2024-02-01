@@ -1,3 +1,6 @@
+Ошибка;
+https://stackoverflow.com/questions/48957195/how-to-fix-docker-got-permission-denied-issue
+
 ==================================================================================================================================
 УСТАНОВКА
 ==================================================================================================================================
@@ -33,7 +36,13 @@ https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index
 - echo -e "AIRFLOW_UID=$(id -u)" > .env
 - docker compose up airflow-init
 - docker compose up -d
+==================================================================================================================================
+DAG
+==================================================================================================================================
+- docker compose up -d — запуск airflow 
+- docker compose down -v — отключение всех контейнеров docker с airflow с удалением всех ДОПИСАТЬ
+- в docker-compose.yaml ставим AIRFLOW__CORE__LOAD_EXAMPLES: на 'false' — удаление всех примеров с airflow
+- docker compose up airflow-init
+- docker compose up -d 
 
 
-Ошибка;
-https://stackoverflow.com/questions/48957195/how-to-fix-docker-got-permission-denied-issue
