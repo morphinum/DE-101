@@ -1,2 +1,4 @@
+https://losst.pro/ustanovka-dbeaver-v-ubuntu-22-04
+
 - sudo apt install snapd
 - sudo snap install dbeaver-ce
