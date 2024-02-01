@@ -1,1 +1,4 @@
-
+1) установка kvm (включить поддердку квм в настройках VirtualBox)
+2) установка docker
+3) установка docker desctop
+4) установка docker compose
