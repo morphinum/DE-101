@@ -1,4 +1,6 @@
-
+==================================================================================================================================
+УСТАНОВКА
+==================================================================================================================================
 - sudo apt install virtualenv — ДОПИСАТЬ
 - pwd — проверка нахождения в правильной директории 
 - python3 --version — узнать версию питона для дальнейшей установки airflow (напрмиер, 3.10.12)
@@ -12,11 +14,12 @@
   • заменяем версияю python на ту, что выводилась ранее
   • пример: pip install 'apache-airflow[postgres,google]==2.8.1' \
  --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.8.1/constraints-3.8.txt"
-- export AIRFLOW_HOME=~dir_name — путь до директории, где будут сохранятся все airflow файлы
+- export AIRFLOW_HOME=~/dir_name/ — путь до директории, где будут сохранятся все airflow файлы
 - airflow db init — создание SQL (postgres) базы данных, loc директории и файлов конфигурации в airflow директории
 - airflow users create --help — выводит шпору по users
 - airflow users create --username admin --firstname first_name --lastname last_name --role Admin --email admin@domain.com
 - airflow webserver -p 8080 — ДОПИСАТЬ
-- airflow scheduler — в новом терминале повторяем команду (export AIRFLOW_HOME=~/airflow/) и после вводим scheduler. ДОПИСАТЬ
-
-Ctrl + C — отключение от сервера
+- airflow scheduler — в новом терминале повторяем команду (export AIRFLOW_HOME=~/dir_name/) и после вводим scheduler. ДОПИСАТЬ
+==================================================================================================================================
+УСТАНОВКА С DOCKER
+==================================================================================================================================
