@@ -3,7 +3,7 @@
 - python3 --version — узнать версию питона для дальнейшей установки airflow (напрмиер, 3.10.12)
 - python3 -m venv venv_name — создане виртуальной среды
 - source venv_name/bin/activate — активация виртуальной среды
-  source diactivate — диактивация виртуальный среды
+  source deactivate — диактивация виртуальный среды
 - • заходим на офф github apache airflow
   • переходим в раздел Installing from PyPI
   • копируем раздел 2 (Installing with extras)
