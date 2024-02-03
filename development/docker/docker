@@ -26,7 +26,7 @@ terminal
 - sudo docker stats [CONTAINER_ID] — просмотр задействованных ресурсов [определенного контейнера]
 - docker logs CONTAINER_ID [опции] — мониторинг процессов
     -f позволяется моиторить логи в реальном времени
-- docker exec -it CONTAINER_ID //bin//bash — вход в док-контейнер
+- docker exec -it CONTAINER_ID //bin//bash — прямое подключение в док-контейнер в интерактивном режиме
 
 - docker rm CONTAINER_ID — удаление контейнера
 - docker rmi IMAGE_ID — удаление образа
