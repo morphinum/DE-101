@@ -40,5 +40,12 @@ terminal
 ==================================================================================================================================
 network
 ==================================================================================================================================
-- docker network create --drive bridge NETWORK_NAME — создание сети с типом сети bridge
+- docker network create --driver bridge NETWORK_NAME — создание сети с типом сети bridge
+- sudo docker network create -d bridge --subnet 192.168.10.0/24 --gateway 192.168.10.1 network_name — создание сети с типом сети bridge (subnet), ip адрес и маску подсети, куда идут пакеты (gateway)
+
 - docker run --net NETWORK_NAME image_name — запуск образа в сети NETWORK_NAME
+
+- docker network ls — перечисляет все сети
+- docker network inspect natwork_name — настройки сети
+
+ 
