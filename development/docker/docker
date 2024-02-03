@@ -41,11 +41,18 @@ terminal
 network
 ==================================================================================================================================
 - docker network create --driver bridge NETWORK_NAME — создание сети с типом сети bridge
-- sudo docker network create -d bridge --subnet 192.168.10.0/24 --gateway 192.168.10.1 network_name — создание сети с типом сети bridge (subnet), ip адрес и маску подсети, куда идут пакеты (gateway)
+- sudo docker network create -d bridge --subnet 192.168.10.0/24 --gateway 192.168.10.1 NETWORK_NAME — создание сети с типом сети bridge (subnet), ip адрес и маску подсети, куда идут пакеты (gateway)
 
-- docker run --net NETWORK_NAME image_name — запуск образа в сети NETWORK_NAME
+- docker run --net NETWORK_NAME IMAGE_NAME — запуск образа в сети NETWORK_NAME
 
 - docker network ls — перечисляет все сети
-- docker network inspect natwork_name — настройки сети
+- docker network inspect NETWORK_NAME — настройки сети
+==================================================================================================================================
+dockerfile
+==================================================================================================================================
+ - docker build -t docker:v01 DIR_NAME — создание образа с именем docker и тэгом v01 (-t), 
 
- 
+FROM ubuntu:22.04
+LABEL LABEL_name=discription — простое описание, лэйблов может быть много
+ENTRYPOINT ["команда"...] — неизменяемо и выполняется всегда
+CMD ["команда"...] — изменяемо и поэтому может не выполнятся, так как переписывается
