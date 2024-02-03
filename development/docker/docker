@@ -16,6 +16,7 @@ terminal
       -d создание контейнера на фоне (detached mode), то есть консоль будет доступна при его работе
   --name container_name дает название контейнеру
       -p 8080:80 передает порт (точнее 2)
+      -v создает volumes, 
 
 - docker start CONTAINER_ID — запуск уже существующего контейнер
 - docker ps — просмотр всех запущеных контейнеров
@@ -23,7 +24,7 @@ terminal
 - docker iamges — просмотр всех образов
 
 - docker inspect CONTAINER_ID — 
-- sudo docker stats [CONTAINER_ID] — просмотр задействованных ресурсов [определенного контейнера]
+- docker stats [CONTAINER_ID] — просмотр задействованных ресурсов [определенного контейнера]
 - docker logs CONTAINER_ID [опции] — мониторинг процессов
     -f позволяется моиторить логи в реальном времени
 - docker exec -it CONTAINER_ID //bin//bash — прямое подключение в док-контейнер в интерактивном режиме
