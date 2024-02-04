@@ -63,7 +63,7 @@
       FROM table2
 13)   SELECT column_names
       FROM table1
-      INTERSECT           — принимает две таблицы в качестве входных данных и возвращает только те записи, которые существуют в обеих таблицах.
+      INTERSECT           — возвращает только те записи, которые существуют в обеих таблицах. В отличие от INNER JOIN не возвращает дубликаты.
       SELECT column_names
       FROM table2
 14)   SELECT column_names
