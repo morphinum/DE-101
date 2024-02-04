@@ -1,6 +1,6 @@
-version: "3.6"
+version: "3.6" # версия docker-compose
 
-services: # указываются все проги при запуске docker-compose
+services: # указываются все создающиеся контейнеры при запуске docker-compose
 
   db: # название сервиса
     restart: always # всегда перезапускается в случае чего-либо
@@ -13,11 +13,7 @@ services: # указываются все проги при запуске docke
       - ./pgdata:/var/lib/postgresql/data # выгрузка файлов из контейнера (/data) на локалку (./pgdata)
       - ./database.sql:/docker-entrypoint-initdb.d/database.sql  # проброска существующих данных в дб
       - ./new_database.sql:/docker-entrypoint-initdb.d/new_database.sql # проброска существующих данных в дб
-      - network_mode: 'host' # если локальный хост не работает, то ставит хост контейнера на локальный. Имеет больший
+      - network_mode: "host" # если локальный хост не работает, то ставит хост контейнера на локальный. Имеет больший
                              # приоритет, чем ports:
     ports:
       - 5432:5432 # первый порт - локальный (снаружи контейнера), второй - внутри контейнера
-
-
-
-
