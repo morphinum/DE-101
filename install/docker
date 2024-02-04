@@ -46,3 +46,5 @@ rm:
 
 up:
 	docker-compose -f docker-compose.yml up --force-recreate
+	# -f docker-compose.yml — путь до файла (не нужно вводить, если файл называется docker-compose)
+	# --force-recreate – НЕ НУЖНО
