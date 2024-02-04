@@ -33,3 +33,16 @@ DOCKER COMPOSE
   curl -SL https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
 Проверка docker-compose
 - docker compose version
+----------------------------------------------------------------------------------------------------------------------------------
+install:
+	sudo apt install docker-compose \
+	&& sudo usermod -aG docker $$USER \
+	&& sudo service docker restart
+
+rm:
+	docker-compose stop \
+	&& docker-compose rm \
+	&& sudo rm -rf pgdata/
+
+up:
+	docker-compose -f docker-compose.yml up --force-recreate
