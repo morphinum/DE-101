@@ -20,12 +20,6 @@
 6) GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser; – дает полные привилегии над нашей новой базой данных mydatabase пользователю myuser
 7) ALTER USER myuser WITH SUPERUSER; – делает пользователя myuser администратором.
    ALTER USER myuser WITH NOSUPERUSER; – лишает пользователя myuser прав администратора.
-
-
-\l — показывает все БАЗЫ ДАННЫХ (Name, Owner, Encoding, Collate, Ctype, Access privileges)
-\l+ — показывает все БАЗЫ ДАННЫХ (Name, Owner, Encoding, Collate, Ctype, Access privileges + Size, Tablespace, Description)
-\du — показывает всех пользователей (Role name, List of Roles' attributes, Member of)
-
 ==================================================================================================================================
 КОМАНДЫ
 ==================================================================================================================================
@@ -57,19 +51,32 @@
 9)    GROUP BY column_name — группировка по значениям в столбце (column_name)
 10)   HAVING — аналог WHERE для сгруппированного столбца
 11)   INNER JOIN talbe_name ON (USING) — создает таблицу с совпадениями в обоих таблицах по столбцам (ON - разные названия, USING(column_name) - одиноковые)
-12)   LEFT JOIN talbe_name ON (USING) — создает таблицу со всеми данными из левого столбца и совпадающими данными из правого + NULL значениями, есоли совпадения отсутствуют
-13)   RIGHT JOIN talbe_name ON (USING) — аналогично LEFT JOIN, только наоборот
-14)   FULL JOIN talbe_name ON (USING) — создает таблицу со всеми данными из обоих столбцов и значениями NULL в обеих столбцах
-15)   CROSS JOIN talbe_name — присваивает каждое значение из правого столбца каждому значению из левого
-16)   SELF JOIN talbe_name — обычно пишется с помощью INNER JOIN
-      
+      LEFT JOIN talbe_name ON (USING) — создает таблицу со всеми данными из левого столбца и совпадающими данными из правого + NULL значениями, есоли совпадения отсутствуют
+      RIGHT JOIN talbe_name ON (USING) — аналогично LEFT JOIN, только наоборот
+      FULL JOIN talbe_name ON (USING) — создает таблицу со всеми данными из обоих столбцов и значениями NULL в обеих столбцах
+      CROSS JOIN talbe_name — присваивает каждое значение из правого столбца каждому значению из левого
+      SELF JOIN talbe_name — обычно пишется с помощью INNER JOIN
+12)   SELECT column_names
+      FROM table1
+      UNION ALL           — соединяет данные (в случае ALL даже дубликаты) из двух таблицы.
+      SELECT column_names
+      FROM table2
+13)   SELECT column_names
+      FROM table1
+      INTERSECT           — принимает две таблицы в качестве входных данных и возвращает только те записи, которые существуют в обеих таблицах.
+      SELECT column_names
+      FROM table2
+14)   SELECT column_names
+      FROM table1
+      EXCEPT           — позволяет нам идентифицировать записи, которые присутствуют в одной таблице, но не в другой.
+      SELECT column_names
+      FROM table2
 ==================================================================================================================================
 ОСТАЛЬНОЕ
 ==================================================================================================================================
 \l — показывает все БАЗЫ ДАННЫХ (Name, Owner, Encoding, Collate, Ctype, Access privileges)
 \l+ — показывает все БАЗЫ ДАННЫХ (Name, Owner, Encoding, Collate, Ctype, Access privileges + Size, Tablespace, Description)
 \du — показывает всех пользователей (Role name, List of Roles' attributes, Member of)
-
 ==================================================================================================================================
 ТИПЫ ДАННЫХ
 ==================================================================================================================================
