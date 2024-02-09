@@ -1,19 +1,18 @@
-version: "3.6" # версия docker-compose
-
-services: # указываются все создающиеся контейнеры при запуске docker-compose
-
-  db: # название сервиса
-    restart: always # всегда перезапускается в случае чего-либо
-    image: postgres:latest # название офф образа на docker hub + его версия
-    environment: # переменные окружения, можно найти на docker hub или в документации
-      POSTGRES_PASSWORD: password # пароль для рут пользователя. Единственная необходимая переменная
-      POSTGRES_USER: user_name # имя рут пользователя. Если не указывается, используется postgres по умолчанию
-      POSTGRES_DB: db_name # название базы данных. Если не указывается, используется postgres по умолчанию
-    volumes: # чтобы данные не терялись после остановки контейнера, сгружаем их сюда
-      - ./pgdata:/var/lib/postgresql/data # выгрузка файлов из контейнера (/data) на локалку (./pgdata)
-      - ./database.sql:/docker-entrypoint-initdb.d/database.sql  # проброска существующих данных в дб
-      - ./new_database.sql:/docker-entrypoint-initdb.d/new_database.sql # проброска существующих данных в дб
-      - network_mode: "host" # если локальный хост не работает, то ставит хост контейнера на локальный. Имеет больший
-                             # приоритет, чем ports:
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: sigiswald
+      POSTGRES_PASSWORD: pw1234
+      POSTGRES_DB: test_db
+    volumes:
+      - /home/sigiswald/projects/v01/psql_data:/var/lib/postgresql/data
     ports:
-      - 5432:5432 # первый порт - локальный (снаружи контейнера), второй - внутри контейнера
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
