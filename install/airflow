@@ -47,3 +47,4 @@ DAG
 - docker compose up -d 
 - airflow tasks render [dag id] [task id] [desired execution date] — Отображение шаблонных значений для любой заданной даты выполнения (выполнять внутри airflow)
 
+- pip install apache-airflow-providers-postgres —  установка POSTGRES провайдера
