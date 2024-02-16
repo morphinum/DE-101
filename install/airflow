@@ -45,7 +45,7 @@ DAG
 - в docker-compose.yaml ставим AIRFLOW__CORE__LOAD_EXAMPLES: на 'false' — удаление всех примеров с airflow
 - docker compose up airflow-init
 - docker compose up -d 
-- airflow tasks render [dag id] [task id] [desired execution date] — Отображение шаблонных значений для любой заданной даты выполнения (выполнять внутри airflow)
 
-- pip install apache-airflow-providers-postgres —  установка POSTGRES провайдера
+- airflow tasks render [dag id] [task id] [desired execution date] — Отображение шаблонных значений для любой заданной даты выполнения (выполнять внутри airflow)
+- pip install apache-airflow-providers-postgres —  установка POSTGRES провайдера (в докере, не в postgres)
 - airflow connections add --conn-type postgres --conn-host localhost --conn-login sigiswald --conn-password pw1234 my_postgres                      -
