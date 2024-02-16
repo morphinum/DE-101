@@ -30,7 +30,7 @@ DOCKER COMPOSE
 ==================================================================================================================================
 - mkdir -p ~/.docker/cli-plugins/
 - вставляем последнюю версии docker-compose (https://github.com/docker/compose/releases)
-  curl -SL https://github.com/docker/compose/releases/download/v2.14.2/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+  curl -SL https://github.com/docker/compose/releases/download/v2.24.5/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
 Проверка docker-compose
 - docker compose version
 ----------------------------------------------------------------------------------------------------------------------------------
