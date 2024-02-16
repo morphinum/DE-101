@@ -48,3 +48,4 @@ DAG
 - airflow tasks render [dag id] [task id] [desired execution date] — Отображение шаблонных значений для любой заданной даты выполнения (выполнять внутри airflow)
 
 - pip install apache-airflow-providers-postgres —  установка POSTGRES провайдера
+- airflow connections add --conn-type postgres --conn-host localhost --conn-login sigiswald --conn--password pw1234 my_postgres                      -
